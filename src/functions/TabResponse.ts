@@ -8,12 +8,12 @@ interface data {
   icon: JSX.Element;
 }
 
-const TabResponse = (data: data, q: string) => {
+const TabResponse = (data: data, query: string) => {
   let queryLink = "";
   if (data.name === "Web" || data.name === "Google") {
-    queryLink = `https://www.google.com/search?q=${q}`;
+    queryLink = `https://www.google.com/search?q=${query}`;
   } else {
-    queryLink = data.link + `q`;
+    queryLink = data.link + `${query}`;
   }
   window.open(queryLink, "_blank");
 };
