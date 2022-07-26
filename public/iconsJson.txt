@@ -1,0 +1,27 @@
+"icons": [
+    {
+      "src": "magGlass16.png",
+      "sizes" : "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "magGlass32.png",
+      "sizes" : "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "magGlass48.png",
+      "sizes" : "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "magGlass128.png",
+      "sizes" : "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "magGlass256.png",
+      "sizes" : "256x256",
+      "type": "image/png"
+    }
+]

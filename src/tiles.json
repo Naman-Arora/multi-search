@@ -1,0 +1,22 @@
+{
+  "tiles":[
+    {
+      "id": 1,
+      "name": "Google",
+      "color": "#fa5252",
+      "link": "www.google.com"
+    },
+    {
+      "id": 2,
+      "name": "Amazon",
+      "color": "#4c6ef5",
+      "link": "www.amazon.com"
+    },
+    {
+      "id": 3,
+      "name": "Wikipedia",
+      "color": "#15aabf",
+      "link": "www.wikipedia.org"
+    }
+  ]
+}
