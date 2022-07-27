@@ -22,7 +22,6 @@ import {
   TbSettings,
   TbX,
 } from "react-icons/tb";
-import { BsFillCheckSquareFill, BsFillXSquareFill } from "react-icons/bs";
 
 import { getHotkeyHandler, useLocalStorage } from "@mantine/hooks";
 import { useEffect, useState } from "react";
@@ -42,7 +41,8 @@ import {
 } from "./constants/RegExps";
 import TabResponse from "./functions/TabResponse";
 
-import data from "./constants/data";
+import data from "./constants/searchData";
+import InfoTable from "./components/InfoTable";
 // import Tile from "./components/Tile";
 
 dayjs().format();
@@ -326,21 +326,6 @@ const App = () => {
     </Modal>
   );
 
-  const tableRows = data.map((item, index) => (
-    <tr key={index}>
-      <td>{item.icon}</td>
-      <td>{item.name}</td>
-      <td>{item.expression}</td>
-      <td>
-        {item.previewAllowed ? (
-          <BsFillCheckSquareFill size={32} />
-        ) : (
-          <BsFillXSquareFill size={32} />
-        )}
-      </td>
-    </tr>
-  ));
-
   const infoModal = (
     <Modal
       centered
@@ -368,48 +353,7 @@ const App = () => {
         </Text>
       </Center>
       <Center>
-        <Table
-          horizontalSpacing="xl"
-          verticalSpacing="md"
-          fontSize="lg"
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <thead>
-            <tr>
-              <th
-                style={{
-                  textAlign: "center",
-                }}
-              >
-                Icon
-              </th>
-              <th
-                style={{
-                  textAlign: "center",
-                }}
-              >
-                Name
-              </th>
-              <th
-                style={{
-                  textAlign: "center",
-                }}
-              >
-                Query Beginning
-              </th>
-              <th
-                style={{
-                  textAlign: "center",
-                }}
-              >
-                Supports Preview
-              </th>
-            </tr>
-          </thead>
-          <tbody>{tableRows}</tbody>
-        </Table>
+        <InfoTable />
       </Center>
     </Modal>
   );
