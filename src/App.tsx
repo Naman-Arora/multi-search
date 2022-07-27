@@ -548,7 +548,6 @@ const App = () => {
             paddingBottom: '2rem',
           }}
         />
-
       </Wrapper>
     </>
   );
