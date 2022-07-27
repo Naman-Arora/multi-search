@@ -15,7 +15,7 @@ const TabResponse = (data: data, query: string) => {
   } else {
     queryLink = data.link + `${query}`;
   }
-  window.open(queryLink, "_blank");
+  window.open(queryLink, "_self");
 };
 
 export default TabResponse;
