@@ -43,7 +43,6 @@ import TabResponse from "./functions/TabResponse";
 
 import data from "./constants/searchData";
 import InfoTable from "./components/InfoTable";
-// import Tile from "./components/Tile";
 
 dayjs().format();
 
@@ -549,10 +548,7 @@ const App = () => {
             paddingBottom: '2rem',
           }}
         />
-        {/* <Group position="center">
-          <Tile name="Google" link="https://www.google.com" color="#fa5252" />
-          <Tile name="Wikipedia" link="https://www.google.com" color="#fa5252" />
-        </Group> */}
+
       </Wrapper>
     </>
   );
