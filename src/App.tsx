@@ -8,7 +8,6 @@ import {
   ActionIcon,
   Group,
   Button,
-  Chips,
   Chip,
   Modal,
   Switch,
@@ -17,7 +16,9 @@ import {
 } from "@mantine/core";
 import {
   TbArrowBarUp,
+  TbBrandGithub,
   TbExternalLink,
+  TbHome,
   TbListSearch,
   TbSettings,
   TbX,
@@ -150,19 +151,71 @@ const App = () => {
       transitionDuration={500}
       transitionTimingFunction="ease"
       radius="lg"
+      withCloseButton={false}
     >
-      <Center>
+      <Group position="apart">
         <Text
           color="pink"
-          weight={600}
           sx={{
             fontFamily: "Rubik",
+            fontWeight: 600,
             fontSize: "2rem",
+            paddingLeft: "1.5rem",
           }}
         >
-          Preferences
+          Settings
         </Text>
-      </Center>
+        <Group position="right">
+          <Tooltip
+            radius="md"
+            transition="fade"
+            transitionDuration={200}
+            label="Open Homepage"
+            position="bottom"
+            closeDelay={500}
+            openDelay={500}
+          >
+            <ActionIcon
+              size={32}
+              onClick={() =>
+                window.open("https://namanarora.dev/apps/search", "_self")
+              }
+            >
+              <TbHome size={32} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip
+            radius="md"
+            transition="fade"
+            transitionDuration={200}
+            label="Open in Github"
+            position="bottom"
+          >
+            <ActionIcon
+              size={32}
+              onClick={() =>
+                window.open(
+                  "https://github.com/Naman-Arora/multi-search",
+                  "_self"
+                )
+              }
+            >
+              <TbBrandGithub size={32} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip
+            radius="md"
+            transition="fade"
+            transitionDuration={200}
+            label="Close Settings"
+            position="bottom"
+          >
+            <ActionIcon size={32} onClick={() => setSettingModalOpened(false)}>
+              <TbX size={32} />
+            </ActionIcon>
+          </Tooltip>
+        </Group>
+      </Group>
       <Center>
         <Table
           horizontalSpacing="xl"
@@ -269,16 +322,13 @@ const App = () => {
                   justifyContent: "center",
                 }}
               >
-                <Chips
-                  variant="filled"
+                <Chip.Group
                   spacing="md"
-                  size="md"
                   multiple={false}
                   value={timeStyle}
                   onChange={() =>
                     setTimeStyle((current) => (current === "12" ? "24" : "12"))
                   }
-                  color="green"
                   onKeyDown={getHotkeyHandler([
                     [
                       "Enter",
@@ -290,7 +340,10 @@ const App = () => {
                   ])}
                 >
                   <Chip
+                    color="green"
+                    variant="filled"
                     value="12"
+                    size="md"
                     sx={{
                       fontFamily: "Rubik",
                       fontWeight: 600,
@@ -299,7 +352,10 @@ const App = () => {
                     12 Hour
                   </Chip>
                   <Chip
+                    color="green"
+                    variant="filled"
                     value="24"
+                    size="md"
                     sx={{
                       fontFamily: "Rubik",
                       fontWeight: 600,
@@ -307,7 +363,7 @@ const App = () => {
                   >
                     24 Hour
                   </Chip>
-                </Chips>
+                </Chip.Group>
               </td>
             </tr>
           </tbody>
@@ -393,15 +449,34 @@ const App = () => {
             </Text>
           </div>
           <Group position="right">
-            <ActionIcon
-              size={32}
-              onClick={() => TabResponse(data[queryType], query)}
+            <Tooltip
+              radius="md"
+              transition="fade"
+              transitionDuration={200}
+              label="Open Preview"
+              position="bottom"
             >
-              <TbExternalLink size={32} />
-            </ActionIcon>
-            <ActionIcon size={32} onClick={() => setPreviewModalOpened(false)}>
-              <TbX size={32} />
-            </ActionIcon>
+              <ActionIcon
+                size={32}
+                onClick={() => TabResponse(data[queryType], query)}
+              >
+                <TbExternalLink size={32} />
+              </ActionIcon>
+            </Tooltip>
+            <Tooltip
+              radius="md"
+              transition="fade"
+              transitionDuration={200}
+              label="Close Preview"
+              position="bottom"
+            >
+              <ActionIcon
+                size={32}
+                onClick={() => setPreviewModalOpened(false)}
+              >
+                <TbX size={32} />
+              </ActionIcon>
+            </Tooltip>
           </Group>
         </Group>
         <Center>
@@ -459,6 +534,7 @@ const App = () => {
                 transition="fade"
                 transitionDuration={200}
                 label="Show Preview"
+                position="bottom"
               >
                 <ActionIcon
                   tabIndex={100}
@@ -481,6 +557,7 @@ const App = () => {
               transition="fade"
               transitionDuration={200}
               label="Shortcuts"
+              position="bottom"
             >
               <ActionIcon
                 tabIndex={100}
@@ -496,6 +573,7 @@ const App = () => {
               transition="fade"
               transitionDuration={200}
               label="Settings"
+              position="bottom"
             >
               <ActionIcon
                 tabIndex={101}
