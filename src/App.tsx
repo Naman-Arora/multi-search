@@ -453,7 +453,7 @@ const App = () => {
             {dateTime.date}
           </Text>
           <Group position="right">
-            {showPreview === 'true' && (
+            {showPreview === "true" && (
               <Tooltip
                 radius="md"
                 transition="fade"
@@ -545,7 +545,7 @@ const App = () => {
           onChange={(event) => setValue(event.currentTarget.value)}
           onKeyDown={getHotkeyHandler([["Enter", openResult]])}
           sx={{
-            paddingBottom: '2rem',
+            paddingBottom: "2rem",
           }}
         />
       </Wrapper>
