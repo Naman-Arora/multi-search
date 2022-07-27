@@ -9,7 +9,7 @@ import {
   FaStackOverflow,
 } from "react-icons/fa";
 
-const data = [
+const searchData = [
   {
     // 0
     name: "Web",
@@ -102,4 +102,4 @@ const data = [
   },
 ];
 
-export default data;
+export default searchData;

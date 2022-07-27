@@ -1,7 +1,7 @@
 import { ActionIcon, Center, Group, Modal, Text } from "@mantine/core";
 import { useState } from "react";
 import { TbExternalLink, TbX } from "react-icons/tb";
-import data from "../constants/data";
+import data from "../constants/searchData";
 import TabResponse from "../functions/TabResponse";
 type Props = {
   num: number,
