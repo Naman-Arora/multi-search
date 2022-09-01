@@ -24,7 +24,7 @@ import {
   TbX,
 } from "react-icons/tb";
 
-import { getHotkeyHandler, useLocalStorage } from "@mantine/hooks";
+import { getHotkeyHandler, useLocalStorage, useViewportSize } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import Wrapper from "./components/Wrapper";
@@ -55,6 +55,8 @@ const App = () => {
   const [infoModalOpened, setInfoModalOpened] = useState(false);
   const [previewModalOpened, setPreviewModalOpened] = useState(false);
   const [settingModalOpened, setSettingModalOpened] = useState(false);
+
+  const { height, width } = useViewportSize();
 
   const [timeStyle, setTimeStyle] = useLocalStorage<"12" | "24">({
     key: "time-format",
@@ -419,7 +421,7 @@ const App = () => {
         centered
         opened={previewModalOpened}
         onClose={() => setPreviewModalOpened(false)}
-        size={"full"}
+        size={"100%"}
         overlayBlur={5}
         transition="slide-up"
         transitionDuration={500}
@@ -485,7 +487,7 @@ const App = () => {
             src={data[queryType].link + `${query}`}
             frameBorder="0"
             width={"100%"}
-            height={700}
+            height={height - 215}
             style={{ borderRadius: "0.5rem" }}
           />
         </Center>
