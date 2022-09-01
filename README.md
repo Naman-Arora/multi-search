@@ -21,3 +21,11 @@ Previews are powered by the `<iframe>` html element. However, since some website
 | Instagram       | "in " OR "instagram "    |
 
 An important note: the space character (" ") after the shortened name is necessary to evalute the user input.
+
+<hr>
+
+Please contact me for more information:
+ - [Email](mailto:namanarora@mail.com)
+ - [LinkedIn](https://www.linkedin.com/in/namarora)
+ - [Twitter](https://twitter.com/RealNamanArora)
+ - [Instagram](https://instagram.com/namarora)
